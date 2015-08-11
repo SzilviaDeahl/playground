@@ -1,0 +1,4 @@
+- filter (returns an array with fever items)
+- every (boolean)
+- none (boolean)
+- some (boolean)
