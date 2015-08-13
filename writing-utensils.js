@@ -42,9 +42,18 @@ function Pencil(inkLevel) {
 Pencil.prototype = Object.create(Pen.prototype);
 Pencil.prototype.constructor = Pencil;
 
+function PointPen(inklevel) {
+  Pen.call(this, inklevel)
+}
+
+PointPen.prototype = Object.create(pen.prototype);
+PointPen.prototype.constructor = PointPen;
+
+
 module.exports = {
   Pen: Pen,
   FountainPen: FountainPen,
   Marker: Marker,
-  Pencil: Pencil
+  Pencil: Pencil,
+  PointPen: PointPen
 };
