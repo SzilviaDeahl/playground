@@ -2,6 +2,8 @@ var Pen = require('./writing-utensils').Pen;
 var FountainPen = require('./writing-utensils').FountainPen;
 var Marker = require('./writing-utensils').Marker;
 var Pencil = require('./writing-utensils').Pencil;
+var PointPen = require('./writing-utensils').PointPen;
+var BluePen = require('./writing-utensils').BluePen;
 
 
 var bic = new Pen(10);
@@ -20,3 +22,9 @@ var marker = new Marker(20);
 
 var pencil = new Pencil(25);
 // console.log(pencil);
+
+var pointPen = new PointPen(30)
+console.log(pointPen.inkLevel);
+
+var bluePen = new BluePen(35);
+console.log(bluePen.inkLevel);
