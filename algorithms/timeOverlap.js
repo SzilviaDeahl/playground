@@ -7,7 +7,7 @@ function isOverlapped (timespanA, timespanB) {
     return 'true';
   } else if (timespanA.start < timespanB.start && timespanA.end > timespanB.end){
     return 'true';
-  } else if (timespanA.start === timespanB.start && timespanA.end === timespanB.end){
+  } else if (timespanA.start.getTime() === timespanB.start.getTime() && timespanA.end.getTime() === timespanB.end.getTime()){
     return 'true';
   } else {
     return 'false';
@@ -43,8 +43,18 @@ var timespans = {
 	event4: {
 		start: new Date("March 19, 2015"),
 		end: new Date("March 22, 2015")
-	}
+	},
+
+  event5: {
+    start: new Date("March 20, 2015"),
+		end: new Date("March 21, 2015")
+  }
 };
+
+// var christmasTimespan = {
+//     start: moment("2015-12-25"),
+//     end: moment("2015-12-26")
+// };
 
 console.log(isOverlapped(timespans.christmas, timespans.thisMillenium)); //true
 
@@ -59,3 +69,5 @@ console.log(isOverlapped(timespans.event1, timespans.event3)); //false
 console.log(isOverlapped(timespans.event1, timespans.event4)); //true
 
 console.log(isOverlapped(timespans.event4, timespans.event1)); //true
+
+console.log(isOverlapped(timespans.event1, timespans.event5));
