@@ -1,10 +1,16 @@
 function isOverlapped (timespanA, timespanB) {
   if(timespanA.end > timespanB.start && timespanA.end < timespanB.end){
-    console.log('true');
-  } else if (timespanA.start > timespanB.start && timespanA.end < timespanB.end || timespanA.end >timespanB.end){
-    console.log('true');
+    return 'true';
+  } else if (timespanA.start > timespanB.start && timespanA.end < timespanB.end){
+    return 'true';
+  } else if (timespanA.start < timespanB.end && timespanA.end > timespanB.end) {
+    return 'true';
+  } else if (timespanA.start < timespanB.start && timespanA.end > timespanB.end){
+    return 'true';
+  } else if (timespanA.start === timespanB.start && timespanA.end === timespanB.end){
+    return 'true';
   } else {
-    console.log('false');
+    return 'false';
   }
 }
 
@@ -40,5 +46,16 @@ var timespans = {
 	}
 };
 
+console.log(isOverlapped(timespans.christmas, timespans.thisMillenium)); //true
 
-isOverlapped(timespans.halloween, timespans.christmas);
+console.log(isOverlapped(timespans.christmas, timespans.halloween)); //false
+
+console.log(isOverlapped(timespans.event1, timespans.event1)); //true
+
+console.log(isOverlapped(timespans.event1, timespans.event2)); //false
+
+console.log(isOverlapped(timespans.event1, timespans.event3)); //false
+
+console.log(isOverlapped(timespans.event1, timespans.event4)); //true
+
+console.log(isOverlapped(timespans.event4, timespans.event1)); //true
