@@ -51,10 +51,6 @@ var timespans = {
   }
 };
 
-// var christmasTimespan = {
-//     start: moment("2015-12-25"),
-//     end: moment("2015-12-26")
-// };
 
 console.log(isOverlapped(timespans.christmas, timespans.thisMillenium)); //true
 
